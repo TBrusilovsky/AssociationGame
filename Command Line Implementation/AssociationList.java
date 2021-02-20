@@ -1,14 +1,16 @@
+package associationGame;
+
+
 import java.io.*;
 import java.util.*;
-import java.util.regex.*;
 
 public class AssociationList
 {
 	private ArrayList<String> words = new ArrayList<String>();
 	private HashMap<String, String[]> wordAssociations = new HashMap<String, String[]>();
-	private Random R = new Random()
+	private Random R = new Random();
 
-	public AssociationList()
+	public AssociationList() throws IOException
 	{
 		Scanner infile = new Scanner(new FileInputStream("WordAssociations.txt"));
 		String line;
@@ -23,26 +25,27 @@ public class AssociationList
 		infile.close();
 	}
 
-	public String randomWord()
+	public String randomWord() //returns a random word with associatons
 	{
 		return words.get(R.nextInt(words.size()));
 	}
 
-	public ArrayList<String> associatedWords(int numberOfWords, String key)
+	public ArrayList<String> associatedWords(int numberOfWords, String key, ArrayList<String> bannedWords) //returns an arraylist of words associated with the key.
 	{
-		if (!words.contains(key)) return new ArrayList<String>(); //key is not in the input file
+		ArrayList<String> returnArray = new ArrayList<String>();
+		int count = 0;
+		String wordToAdd;
+
+		if (!words.contains(key)) return returnArray; //key is not in the input file
 
 		String[] keyArray = wordAssociations.get(key);
 
-		if (keyArray.length < numberOfWords); return new ArrayList<String>(); //there are not enough words assoiciated with the key
+		if (keyArray.length < numberOfWords) return returnArray; //there are not enough words assoiciated with the key
 
-		ArrayList<String> returnArray = new ArrayList<String>();
-		int count = 0;
-		String wordToAdd
 		while (count < numberOfWords)
 		{
 			wordToAdd = keyArray[R.nextInt(keyArray.length)];
-			if (!returnArray.contains(wordToAdd))
+			if (!returnArray.contains(wordToAdd) && !bannedWords.contains(wordToAdd)) //makes sure it can't add a repeat or a word already used in the board
 			{
 				returnArray.add(wordToAdd);
 				count++;
@@ -51,8 +54,4 @@ public class AssociationList
 		return returnArray;
 
 	}
-
-
-
-
 } 
