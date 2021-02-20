@@ -8,6 +8,7 @@ public class PlayGame
 	public AssociationBoard board;
 	public String[][] visibleBoard;
 	public String[] visibleSolutions;
+	public String finalSolution;
 	public int boardSize = 4;
 	public InputStreamReader isr;
 	public BufferedReader br;
@@ -20,6 +21,7 @@ public class PlayGame
 		visibleBoard[3] = new String[]{"A4","B4","C4","D4"};
 		visibleSolutions = new String[]{"A","B","C","D"};
 		board = new AssociationBoard();
+		finalSolution = "Final";
 
 		isr = new InputStreamReader(System.in);
 		br = new BufferedReader(isr);
@@ -64,20 +66,62 @@ public class PlayGame
 
 	public void printBoard()
 	{
+		System.out.println("---------------------------------------------------------------------");
+
 		for (int i = 0; i < boardSize; i++)
 		{
+			System.out.print("| ");
 			for (int j = 0; j<boardSize;j++)
 			{
-				System.out.print(visibleBoard[i][j] + " | ");
+				System.out.print(printableWord(visibleBoard[i][j]) + " | ");
 			}
 			System.out.println();
 		}
+		System.out.println("---------------------------------------------------------------------");
+		System.out.print("| ");
+
 		for (int k = 0; k< boardSize; k++)
 		{
-			System.out.print(visibleSolutions[k] + " | ");
+			System.out.print(printableWord(visibleSolutions[k]) + " | ");
 		}
 		System.out.println();
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("                           |" + printableWord(finalSolution) + "|                       ");
 	}
+
+	public String printableWord(String word)
+	{
+		int spacesToAdd = 14 - word.length();
+		StringBuilder returnWord = new StringBuilder();
+		if (spacesToAdd % 2 == 1)
+		{
+			for (int i = 0; i < spacesToAdd/2 ; i++)
+			{
+				returnWord.append(" ");
+			}
+			returnWord.append(word);
+			for (int j = 0; j <= spacesToAdd/2 ; j++)
+			{
+				returnWord.append(" ");
+			}
+			return returnWord.toString();
+		}
+		else
+		{
+			for (int i = 0; i < spacesToAdd/2 ; i++)
+			{
+				returnWord.append(" ");
+			}
+			returnWord.append(word);
+			for (int j = 0; j < spacesToAdd/2 ; j++)
+			{
+				returnWord.append(" ");
+			}
+			return returnWord.toString();
+		}
+	}
+
+
 
 	public boolean openClue(String tile)
 	{
@@ -160,7 +204,7 @@ public class PlayGame
 		//gets there guess and sees if it is right
 	}
 
-	public boolean checkFinal()
+	public boolean checkFinal() throws IOException
 	{
 		return false;
 		//get there guess, see if its right

@@ -25,7 +25,9 @@ public class AssociationMain
 			rounds++;
 			inGame = game.play();
 		}
+		game.printBoard();
 		System.out.println("Well Played! You finished the game in " + rounds + " rounds!");
+
 
 		System.exit(0);
 	}
