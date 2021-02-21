@@ -71,7 +71,7 @@ public class AssociationList
 			wordToAdd = keyArray[R.nextInt(keyArray.length)];
 
 			if (wordToAdd.charAt(0) == '*') { //only works if the word has a *
-				wordToAdd = wordToAdd.substring(1,wordToAdd.length());
+				wordToAdd = wordToAdd.substring(1);
 				if (!returnArray.contains(wordToAdd) && !bannedWords.contains(wordToAdd) ) //makes sure it can't add a repeat or a word already used in the board
 				{
 					returnArray.add(wordToAdd);

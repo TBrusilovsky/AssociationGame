@@ -39,7 +39,7 @@ public class AssociationBoard
 	private void loadMid()
 	{
 		midSolutions = new String[boardSize];
-		ArrayList<String> solutionList = list.associatedWords(boardSize,finalSolution,usedWords);
+		ArrayList<String> solutionList = list.associatedWordsStarred(boardSize,finalSolution,usedWords);
 
 		for (int i = 0; i < boardSize; i++)
 		{

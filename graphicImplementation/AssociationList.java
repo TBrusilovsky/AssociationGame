@@ -44,6 +44,7 @@ public class AssociationList
 		while (count < numberOfWords)
 		{
 			wordToAdd = keyArray[R.nextInt(keyArray.length)];
+			if (wordToAdd.charAt(0) == '*') wordToAdd = wordToAdd.substring(1,wordToAdd.length());
 			if (!returnArray.contains(wordToAdd) && !bannedWords.contains(wordToAdd)) //makes sure it can't add a repeat or a word already used in the board
 			{
 				returnArray.add(wordToAdd);
@@ -53,4 +54,33 @@ public class AssociationList
 		return returnArray;
 
 	}
+	public ArrayList<String> associatedWordsStarred(int numberOfWords, String key, ArrayList<String> bannedWords) //returns an arraylist of words associated with the key.
+	{
+		ArrayList<String> returnArray = new ArrayList<String>();
+		int count = 0;
+		String wordToAdd;
+
+		if (!words.contains(key)) return returnArray; //key is not in the input file
+
+		String[] keyArray = wordAssociations.get(key);
+
+		if (keyArray.length < numberOfWords) return returnArray; //there are not enough words assoiciated with the key
+
+		while (count < numberOfWords)
+		{
+			wordToAdd = keyArray[R.nextInt(keyArray.length)];
+
+			if (wordToAdd.charAt(0) == '*') { //only works if the word has a *
+				wordToAdd = wordToAdd.substring(1);
+				if (!returnArray.contains(wordToAdd) && !bannedWords.contains(wordToAdd) ) //makes sure it can't add a repeat or a word already used in the board
+				{
+					returnArray.add(wordToAdd);
+					count++;
+				}
+			}
+		}
+		return returnArray;
+
+	}
+
 } 
