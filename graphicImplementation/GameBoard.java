@@ -77,7 +77,7 @@ public class GameBoard extends JFrame
 					g.setColor(Color.blue); 
 					g.fillRect(155*i-50,50+55*j,150,50);
 					g.setColor(Color.white); 
-					g.drawString(visibleBoard[i-1][j-1],155*i-30,80+55*j);
+					g.drawString(visibleBoard[j-1][i-1],155*i-30,80+55*j);
 				}
 				g.setColor(Color.blue); 
 				g.fillRect(155*i-50,340,150,50);
