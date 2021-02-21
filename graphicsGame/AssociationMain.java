@@ -1,6 +1,9 @@
 
-import java.io.*;
 import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.io.*;
 
 public class AssociationMain
 {
@@ -10,26 +13,14 @@ public class AssociationMain
 		boolean inGame = true;
 		int rounds = 0;
 
-		/*if (args.length == 0)
-		{
-			game = new PlayGame();
-		}
-		else {
-			game = new PlayGame(args[0]);
-		} */
 
-		System.out.println("Welcome to the Association Game.");
-
+		
 		while (inGame)
 		{
 			rounds++;
 			inGame = game.play();
 		}
-		game.printBoard();
-		System.out.println("Well Played! You finished the game in " + rounds + " rounds!");
-		game.getScores();
+		game.showGG();
 
-
-		System.exit(0);
 	}
 }
