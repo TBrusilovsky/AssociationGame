@@ -11,7 +11,7 @@ public class AssociationList
 
 	public AssociationList() throws IOException
 	{
-		Scanner infile = new Scanner(new FileInputStream("test.txt"));
+		Scanner infile = new Scanner(new FileInputStream("WordList.txt"));
 		String line;
 		String[] splitLine;
 		while (infile.hasNext())

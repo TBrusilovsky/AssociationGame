@@ -12,6 +12,8 @@ Farm *Hay Pony
 Hay *Horse *Cow
 Trump *Steak *Hotel Fake President Twitter
 Horse Stable Fast Gallop *Hay Frolic Pony Race Racetrack Stallion Mare Saddle *Farm 
+
+
 Plant Flower Tree Moss Daisy Bush Grow Spring Blossom Green
 Pittsburgh City Cold Snow West Gold Steelers Pirates Penguins Museums Incline
 Chicken Sandwich Nuggets Delicious Deluxe Club Wrap Salad Milkshake Service Fries
@@ -20,6 +22,7 @@ Tree Leaf Plant Seed Root Tall Thick Photosynthasis Carbon Branch Water
 Elephant Gray Large Big Trunk Mammal Zoo 
 Star Sky Shine Orbit Light Universe Bright Twinkle Cluster
 Mouse Disney Mickey Minnie Rat Rodent Computer Screen Computer Squeak Cheese Clicking
-money lender sum treasury debt payment mortgage pocket change dollar tradesman stealing greed fraud lottery investing spending gambling inflation valuable buying cash
-mask coronavirus pandemic joker clown batman coughing goggles helmet illusion hidden disguise
-cyclist turnpike motorway asphalt crossing traffic congestion lane freeway highway route bicycle driveway bridge car trunk intersection
+
+Money Lender Sum Treasury Debt Payment Mortgage Pocket Change Dollar Tradesman Stealing Greed Fraud Lottery Investing Spending Gambling Inflation Waluable Buying Cash
+Mask Coronavirus Pandemic Joker Clown Batman Coughing Goggles Helmet Illusion Hidden Disguise
+Cyclist Turnpike Motorway Asphalt Crossing Traffic Congestion Lane Freeway Highway Route Bicycle Driveway Bridge Car Trunk Intersection
